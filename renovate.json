@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>eeveebank/renovate-config",
+    "group:recommended",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["digest", "patch", "minor", "pin"],
+      "automerge": true
+    }
+  ],
+  "platformAutomerge": true
+}
