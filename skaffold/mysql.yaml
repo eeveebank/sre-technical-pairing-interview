@@ -1,0 +1,37 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: databases
+deploy:
+  helm:
+    releases:
+      - name: customers-db-mysql
+        remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
+        version: 12.1.0
+        valuesFiles:
+          - helm/db-values.yaml
+        setValues:
+          commonLabels:
+            app: 'customers-db-mysql'
+            version: '8.4.3'
+        wait: true
+      - name: vets-db-mysql
+        remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
+        version: 12.1.0
+        valuesFiles:
+          - helm/db-values.yaml
+        setValues:
+          commonLabels:
+            app: 'vets-db-mysql'
+            version: '8.4.3'
+        wait: true
+      - name: visits-db-mysql
+        remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
+        version: 12.1.0
+        valuesFiles:
+          - helm/db-values.yaml
+        setValues:
+          commonLabels:
+            app: 'visits-db-mysql'
+            version: '8.4.3'
+        wait: true
