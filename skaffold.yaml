@@ -1,0 +1,28 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: sre-technical-pairing-interview
+
+profiles:
+  - name: local
+    activation:
+      - kubeContext: minikube
+
+requires:
+  - configs: ["istio"]
+    path: ./skaffold/istio.yaml
+  - configs: ["databases"]
+    path: ./skaffold/mysql.yaml
+
+manifests:
+  rawYaml:
+    - manifests/ingress/gateway.yaml
+    - manifests/config/telemetry.yaml
+    - manifests/addons/jaeger.yaml
+    - manifests/addons/prometheus.yaml
+    - manifests/addons/grafana.yaml
+    - manifests/addons/kiali.yaml
+
+deploy:
+  statusCheckDeadlineSeconds: 240
+  kubectl: {}

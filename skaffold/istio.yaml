@@ -1,0 +1,69 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: istio
+
+manifests:
+  rawYaml:
+    - ../manifests/namespace.yaml
+
+deploy:
+  kubectl: {}
+  helm:
+    releases:
+      - name: istio-base
+        createNamespace: true
+        namespace: istio-system
+        remoteChart: https://istio-release.storage.googleapis.com/charts/base-1.24.1.tgz
+        setValues:
+          defaultRevision: default
+      - name: istio-istiod
+        createNamespace: true
+        namespace: istio-system
+        remoteChart: https://istio-release.storage.googleapis.com/charts/istiod-1.24.1.tgz
+        setValues:
+          defaultRevision: default
+          gateways:
+            istio-egressgateway:
+              autoscaleEnabled: false
+            istio-ingressgateway:
+              autoscaleEnabled: false
+          global:
+            configValidation: true
+            hub: docker.io/istio
+            istioNamespace: istio-system
+            proxy:
+              resources:
+                requests:
+                  cpu: 10m
+                  memory: 40Mi
+            tag: 1.24.1
+          meshConfig:
+            accessLogFile: /dev/stdout
+            defaultConfig:
+              tracing:
+                sampling: 100
+            enableTracing: true
+            extensionProviders:
+              - envoyOtelAls:
+                  port: 4317
+                  service: opentelemetry-collector.istio-system.svc.cluster.local
+                name: otel
+              - name: zipkin
+                zipkin:
+                  port: 9411
+                  service: zipkin.istio-system.svc.cluster.local
+          pilot:
+            autoscaleEnabled: false
+            cni:
+              enabled: false
+            enabled: true
+            env:
+              PILOT_ENABLE_MYSQL_FILTER: "true"
+        wait: true
+      - name: istio-ingress
+        createNamespace: true
+        namespace: istio-ingress
+        remoteChart: https://istio-release.storage.googleapis.com/charts/gateway-1.24.1.tgz
+        setValues:
+          defaultRevision: default
