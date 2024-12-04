@@ -1,0 +1,4 @@
+# Auto-adds the below GitHub teams to PRs. The repo should be set up to ensure a review is required from a team member before merging to master.
+# See https://help.github.com/en/articles/about-code-owners
+
+* @eeveebank/mission-foundation-engineering
