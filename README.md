@@ -25,6 +25,6 @@ The following tools need to be installed for the test.
 
 ## Troubleshooting
 
-To save time during the interview, please complete the above steps. If you have any issues, you can get in touch via your recruiter/hiring manager, or troubleshoot yourself.
+To save time during the interview, please complete the above steps ahead of time. If you have any issues, you can get in touch via your recruiter/hiring manager, or troubleshoot yourself.
 
 For example, if you are having issues with minikube tunnel, you can troubleshoot using the minikube [docs](https://minikube.sigs.k8s.io/docs/handbook/troubleshooting/). 
