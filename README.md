@@ -12,6 +12,7 @@ The following tools need to be installed for the test.
 - [helm](https://helm.sh/docs/intro/install/)
 - [skaffold](https://skaffold.dev/docs/install/)
 - [istioctl](https://istio.io/latest/docs/ops/diagnostic-tools/istioctl/#install-hahahugoshortcode969s2hbhb)
+- [Java/JDK21](https://sdkman.io/jdks#amzn)
 
 ## Getting Started
 
