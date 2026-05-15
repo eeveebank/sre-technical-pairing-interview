@@ -10,9 +10,13 @@ The following tools need to be installed for the test.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [minikube](https://minikube.sigs.k8s.io/docs/start)
 - [helm](https://helm.sh/docs/intro/install/)
-- [skaffold at 2.13.2](https://github.com/GoogleContainerTools/skaffold/releases/tag/v2.13.2) - there's also the normal [installation instructions](https://skaffold.dev/docs/install/) but there's a [bug](https://github.com/GoogleContainerTools/skaffold/issues/9687) in v2.14.0 that breaks the setup.
+- [skaffold](https://skaffold.dev/docs/install/) 
 - [istioctl](https://istio.io/latest/docs/ops/diagnostic-tools/istioctl/#install-hahahugoshortcode969s2hbhb)
 - [Java/JDK21](https://sdkman.io/jdks#amzn)
+- [Maven](https://maven.apache.org/) - install via [sdkman](https://sdkman.io/):
+  ```bash
+  sdk install maven
+  ```
 
 ## Getting Started
 
