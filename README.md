@@ -11,7 +11,7 @@ The following tools need to be installed for the test.
 - [minikube](https://minikube.sigs.k8s.io/docs/start)
 - [helm](https://helm.sh/docs/intro/install/)
 - [skaffold](https://skaffold.dev/docs/install/) 
-- [istioctl](https://istio.io/latest/docs/ops/diagnostic-tools/istioctl/#install-hahahugoshortcode969s2hbhb)
+- [istioctl](https://istio.io/latest/docs/ops/diagnostic-tools/istioctl/)
 - [Java/JDK21](https://sdkman.io/jdks#amzn)
 - [Maven](https://maven.apache.org/) - install via [sdkman](https://sdkman.io/):
   ```bash
