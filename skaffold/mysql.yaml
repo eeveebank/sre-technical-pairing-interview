@@ -7,7 +7,7 @@ deploy:
     releases:
       - name: customers-db-mysql
         remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
-        version: 12.1.0
+        version: 12.3.5
         valuesFiles:
           - helm/db-values.yaml
         setValues:
@@ -17,7 +17,7 @@ deploy:
         wait: true
       - name: vets-db-mysql
         remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
-        version: 12.1.0
+        version: 12.3.5
         valuesFiles:
           - helm/db-values.yaml
         setValues:
@@ -27,7 +27,7 @@ deploy:
         wait: true
       - name: visits-db-mysql
         remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
-        version: 12.1.0
+        version: 12.3.5
         valuesFiles:
           - helm/db-values.yaml
         setValues:
