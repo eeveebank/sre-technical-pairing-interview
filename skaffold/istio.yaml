@@ -14,13 +14,13 @@ deploy:
       - name: istio-base
         createNamespace: true
         namespace: istio-system
-        remoteChart: https://istio-release.storage.googleapis.com/charts/base-1.24.1.tgz
+        remoteChart: https://istio-release.storage.googleapis.com/charts/base-1.29.2.tgz
         setValues:
           defaultRevision: default
       - name: istio-istiod
         createNamespace: true
         namespace: istio-system
-        remoteChart: https://istio-release.storage.googleapis.com/charts/istiod-1.24.1.tgz
+        remoteChart: https://istio-release.storage.googleapis.com/charts/istiod-1.29.2.tgz
         setValues:
           defaultRevision: default
           gateways:
@@ -37,7 +37,7 @@ deploy:
                 requests:
                   cpu: 10m
                   memory: 40Mi
-            tag: 1.24.1
+            tag: 1.29.2
           meshConfig:
             accessLogFile: /dev/stdout
             defaultConfig:
@@ -64,6 +64,4 @@ deploy:
       - name: istio-ingress
         createNamespace: true
         namespace: istio-ingress
-        remoteChart: https://istio-release.storage.googleapis.com/charts/gateway-1.24.1.tgz
-        setValues:
-          defaultRevision: default
+        remoteChart: https://istio-release.storage.googleapis.com/charts/gateway-1.29.2.tgz

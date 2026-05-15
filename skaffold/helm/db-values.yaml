@@ -2,6 +2,17 @@
 ##
 clusterDomain: <DOMAIN>
 
+## MySQL image
+## Bitnami moved free images to `bitnamilegacy` on 2025-08-28; `bitnami/mysql`
+## is no longer published publicly. The hardened images in `bitnamisecure`
+## require a paid subscription. The chart refuses to install with non-default
+## images unless `global.security.allowInsecureImages` is set.
+global:
+  security:
+    allowInsecureImages: true
+image:
+  repository: bitnamilegacy/mysql
+
 ## MySQL Authentication parameters
 ##
 auth:
