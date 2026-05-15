@@ -14,9 +14,9 @@ The following tools need to be installed for the test.
 - [istioctl](https://istio.io/latest/docs/ops/diagnostic-tools/istioctl/)
 - [Java/JDK21](https://sdkman.io/jdks#amzn)
 - [Maven](https://maven.apache.org/) - install via [sdkman](https://sdkman.io/):
-  ```bash
-  sdk install maven
-  ```
+    ```bash
+    sdk install maven
+    ```
 
 ## Getting Started
 
