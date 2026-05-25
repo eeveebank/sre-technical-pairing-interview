@@ -20,7 +20,7 @@ The following tools need to be installed for the test.
 
 ## Getting Started
 
-- Create a minikube cluster - `minikube start --cpus=2 --memory=4000`
+- Create a minikube cluster - `minikube start --cpus=8 --memory=10000`
 - Set the kubectl context - `minikube update-context`
 - Run skaffold to deploy services - `skaffold run`
 - Check you have services running such as Istio, Grafana, Jaeger, Kiali and some MySQL databases - `watch kubectl get po -A`
